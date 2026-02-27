@@ -60,7 +60,7 @@ const pool = new Pool({
     app.get("/api/json", async (req, res) => {
         try {
             const url = req.query.url as string;
-            const response = await fetch("http://84.115.142.4:9000/proxy?target=" + url);
+            const response = await fetch("https://tunnel.mariozechner.at/proxy?target=" + url);
             if (!response.ok) throw new Error("Couldn't fetch " + url);
             res.json(await response.json());
         } catch (e) {
